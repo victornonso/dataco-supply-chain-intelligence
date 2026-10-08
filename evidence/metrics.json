@@ -1,0 +1,472 @@
+{
+  "metrics": {
+    "orderLines": 180519,
+    "orders": 65752,
+    "customers": 20652,
+    "products": 118,
+    "countries": 164,
+    "markets": 5,
+    "salesBeforeDiscounts": 36784734.30999997,
+    "netSales": 33054402.040000115,
+    "profit": 3966902.97,
+    "discounts": 3730378.4000000106,
+    "netMargin": 12.001133662014315,
+    "netAov": 502.7132564788921,
+    "lateLineRate": 57.28996035076549,
+    "onTimeLineRate": 42.71003964923451,
+    "lateLines": 98977,
+    "lateDelayDays": 1.6181840225506936,
+    "lossOrders": 13908,
+    "lossOrderRate": 21.152208297846453,
+    "top20CustomerNetShare": 49.93716389128773,
+    "repeatPurchaseRate": 56.982374588417585,
+    "fullYearGrowth": -4.026239554593399,
+    "movingThreeMonthSales": 487491.76333333337
+  },
+  "shipping": [
+    {
+      "DimShipping[ShippingMode": "Standard Class",
+      "lateRate": 39.76908087985807,
+      "lateLines": 41023,
+      "netSales": 19792221.040000595,
+      "averageShippingDays": 3.9936986806006614
+    },
+    {
+      "DimShipping[ShippingMode": "First Class",
+      "lateRate": 100.0,
+      "lateLines": 26513,
+      "netSales": 5100451.020000148,
+      "averageShippingDays": 2.0
+    },
+    {
+      "DimShipping[ShippingMode": "Second Class",
+      "lateRate": 79.82902443353251,
+      "lateLines": 26987,
+      "netSales": 6416528.470000331,
+      "averageShippingDays": 3.9931668934508666
+    },
+    {
+      "DimShipping[ShippingMode": "Same Day",
+      "lateRate": 47.92854836974067,
+      "lateLines": 4454,
+      "netSales": 1745201.5099998855,
+      "averageShippingDays": 0.47928548369740664
+    }
+  ],
+  "categories": [
+    {
+      "DimProduct[CategoryName": "Sporting Goods",
+      "salesBeforeDiscounts": 117006.75,
+      "netSales": 105063.60999999968,
+      "profit": 12518.61,
+      "margin": 11.915267331857375
+    },
+    {
+      "DimProduct[CategoryName": "Cleats",
+      "salesBeforeDiscounts": 4431942.66,
+      "netSales": 3982856.4499998544,
+      "profit": 494636.92,
+      "margin": 12.41915008008933
+    },
+    {
+      "DimProduct[CategoryName": "Shop By Sport",
+      "salesBeforeDiscounts": 1309522.02,
+      "netSales": 1177185.6200000127,
+      "profit": 129813.96,
+      "margin": 11.027484348644915
+    },
+    {
+      "DimProduct[CategoryName": "Women'S Apparel",
+      "salesBeforeDiscounts": 3147800.0,
+      "netSales": 2828708.5,
+      "profit": 350421.03,
+      "margin": 12.388021954188636
+    },
+    {
+      "DimProduct[CategoryName": "Electronics",
+      "salesBeforeDiscounts": 371034.6400000013,
+      "netSales": 333327.2600000003,
+      "profit": 40891.38,
+      "margin": 12.267637516355537
+    },
+    {
+      "DimProduct[CategoryName": "Boxing & Mma",
+      "salesBeforeDiscounts": 85205.41,
+      "netSales": 76286.72000000002,
+      "profit": 8641.37,
+      "margin": 11.327489240591284
+    },
+    {
+      "DimProduct[CategoryName": "Cardio Equipment",
+      "salesBeforeDiscounts": 3694843.200000002,
+      "netSales": 3320250.719999877,
+      "profit": 383011.1,
+      "margin": 11.535607768801693
+    },
+    {
+      "DimProduct[CategoryName": "Trade-In",
+      "salesBeforeDiscounts": 68721.78000000014,
+      "netSales": 61667.54000000004,
+      "profit": 7915.37,
+      "margin": 12.83555335594706
+    },
+    {
+      "DimProduct[CategoryName": "Kids' Golf Clubs",
+      "salesBeforeDiscounts": 98797.57999999987,
+      "netSales": 89473.6999999999,
+      "profit": 9045.84,
+      "margin": 10.11005468646095
+    },
+    {
+      "DimProduct[CategoryName": "Hunting & Shooting",
+      "salesBeforeDiscounts": 56848.41999999998,
+      "netSales": 50878.909999999974,
+      "profit": 5980.0,
+      "margin": 11.753396446582688
+    },
+    {
+      "DimProduct[CategoryName": "Baseball & Softball",
+      "salesBeforeDiscounts": 94057.14999999997,
+      "netSales": 84367.27,
+      "profit": 12762.13,
+      "margin": 15.126873253099216
+    },
+    {
+      "DimProduct[CategoryName": "Men'S Footwear",
+      "salesBeforeDiscounts": 2891757.54,
+      "netSales": 2598494.4399998905,
+      "profit": 311902.82,
+      "margin": 12.003212906625006
+    },
+    {
+      "DimProduct[CategoryName": "Camping & Hiking",
+      "salesBeforeDiscounts": 4118425.4200000004,
+      "netSales": 3700783.539999852,
+      "profit": 427455.57,
+      "margin": 11.550407241597737
+    },
+    {
+      "DimProduct[CategoryName": "Consumer Electronics",
+      "salesBeforeDiscounts": 108991.2800000001,
+      "netSales": 97937.55999999992,
+      "profit": 13223.4,
+      "margin": 13.50186792482885
+    },
+    {
+      "DimProduct[CategoryName": "Cameras",
+      "salesBeforeDiscounts": 267607.6800000008,
+      "netSales": 240496.6799999997,
+      "profit": 30289.8,
+      "margin": 12.594685298774202
+    },
+    {
+      "DimProduct[CategoryName": "Computers",
+      "salesBeforeDiscounts": 663000.0,
+      "netSales": 595395.0,
+      "profit": 69656.81,
+      "margin": 11.699260155023135
+    },
+    {
+      "DimProduct[CategoryName": "Basketball",
+      "salesBeforeDiscounts": 27099.330000000038,
+      "netSales": 24705.33000000003,
+      "profit": 1845.67,
+      "margin": 7.470736071932647
+    },
+    {
+      "DimProduct[CategoryName": "Soccer",
+      "salesBeforeDiscounts": 26477.049999999974,
+      "netSales": 23909.94999999999,
+      "profit": 3901.95,
+      "margin": 16.31935658585652
+    },
+    {
+      "DimProduct[CategoryName": "Girls' Apparel",
+      "salesBeforeDiscounts": 151706.19999999998,
+      "netSales": 136206.83,
+      "profit": 17288.57,
+      "margin": 12.692880379052946
+    },
+    {
+      "DimProduct[CategoryName": "Accessories",
+      "salesBeforeDiscounts": 133671.50999999992,
+      "netSales": 119712.55000000255,
+      "profit": 16643.52,
+      "margin": 13.902903246150588
+    },
+    {
+      "DimProduct[CategoryName": "Women'S Clothing",
+      "salesBeforeDiscounts": 140283.0000000015,
+      "netSales": 126006.93000000005,
+      "profit": 19102.85,
+      "margin": 15.160158254788042
+    },
+    {
+      "DimProduct[CategoryName": "Crafts",
+      "salesBeforeDiscounts": 223356.32000000076,
+      "netSales": 200704.87000000014,
+      "profit": 25531.17,
+      "margin": 12.720752615519485
+    },
+    {
+      "DimProduct[CategoryName": "Men'S Clothing",
+      "salesBeforeDiscounts": 43856.79999999983,
+      "netSales": 39365.70999999999,
+      "profit": 2006.04,
+      "margin": 5.0959070724241995
+    },
+    {
+      "DimProduct[CategoryName": "Tennis & Racquet",
+      "salesBeforeDiscounts": 44585.09000000001,
+      "netSales": 40077.810000000005,
+      "profit": 5747.98,
+      "margin": 14.342051125048997
+    },
+    {
+      "DimProduct[CategoryName": "Fitness Accessories",
+      "salesBeforeDiscounts": 35601.43999999997,
+      "netSales": 31751.360000000008,
+      "profit": 5258.39,
+      "margin": 16.56114887677252
+    },
+    {
+      "DimProduct[CategoryName": "As Seen On  Tv!",
+      "salesBeforeDiscounts": 20597.939999999995,
+      "netSales": 18519.609999999986,
+      "profit": 714.43,
+      "margin": 3.857694627478659
+    },
+    {
+      "DimProduct[CategoryName": "Golf Balls",
+      "salesBeforeDiscounts": 77098.16000000002,
+      "netSales": 69341.24999999988,
+      "profit": 8342.67,
+      "margin": 12.03132334649291
+    },
+    {
+      "DimProduct[CategoryName": "Strength Training",
+      "salesBeforeDiscounts": 54895.52999999999,
+      "netSales": 48813.84000000001,
+      "profit": 332.31,
+      "margin": 0.6807700439055807
+    },
+    {
+      "DimProduct[CategoryName": "Children'S Clothing",
+      "salesBeforeDiscounts": 232829.20000000123,
+      "netSales": 209268.38000000024,
+      "profit": 27178.1,
+      "margin": 12.987198543802922
+    },
+    {
+      "DimProduct[CategoryName": "Lacrosse",
+      "salesBeforeDiscounts": 39464.78999999998,
+      "netSales": 35415.929999999964,
+      "profit": 4364.29,
+      "margin": 12.322957493986475
+    },
+    {
+      "DimProduct[CategoryName": "Baby",
+      "salesBeforeDiscounts": 12229.559999999987,
+      "netSales": 10957.399999999992,
+      "profit": 1525.03,
+      "margin": 13.917808969281042
+    },
+    {
+      "DimProduct[CategoryName": "Fishing",
+      "salesBeforeDiscounts": 6929653.5,
+      "netSales": 6226935.119999795,
+      "profit": 756220.76,
+      "margin": 12.144349433980048
+    },
+    {
+      "DimProduct[CategoryName": "Books",
+      "salesBeforeDiscounts": 12587.399999999974,
+      "netSales": 11303.420000000007,
+      "profit": 883.01,
+      "margin": 7.811883483052028
+    },
+    {
+      "DimProduct[CategoryName": "Dvds",
+      "salesBeforeDiscounts": 79395.53999999959,
+      "netSales": 71319.38000000003,
+      "profit": 6655.43,
+      "margin": 9.331867439116825
+    },
+    {
+      "DimProduct[CategoryName": "Cds",
+      "salesBeforeDiscounts": 3059.5899999999947,
+      "netSales": 2750.029999999999,
+      "profit": 383.85,
+      "margin": 13.958029548768566
+    },
+    {
+      "DimProduct[CategoryName": "Garden",
+      "salesBeforeDiscounts": 257768.71999999817,
+      "netSales": 231765.46000000002,
+      "profit": 33443.01,
+      "margin": 14.42967817551416
+    },
+    {
+      "DimProduct[CategoryName": "Hockey",
+      "salesBeforeDiscounts": 48360.729999999996,
+      "netSales": 43618.36,
+      "profit": 5397.43,
+      "margin": 12.374215811873716
+    },
+    {
+      "DimProduct[CategoryName": "Pet Supplies",
+      "salesBeforeDiscounts": 41524.80000000024,
+      "netSales": 37318.3,
+      "profit": 3589.26,
+      "margin": 9.617962233006326
+    },
+    {
+      "DimProduct[CategoryName": "Health And Beauty",
+      "salesBeforeDiscounts": 106080.47999999984,
+      "netSales": 95358.10999999999,
+      "profit": 9493.63,
+      "margin": 9.955765692084292
+    },
+    {
+      "DimProduct[CategoryName": "Music",
+      "salesBeforeDiscounts": 113122.09999999966,
+      "netSales": 101687.28999999998,
+      "profit": 14436.32,
+      "margin": 14.196779164829747
+    },
+    {
+      "DimProduct[CategoryName": "Video Games",
+      "salesBeforeDiscounts": 33310.5,
+      "netSales": 29919.199999999997,
+      "profit": 2717.52,
+      "margin": 9.082863178159844
+    },
+    {
+      "DimProduct[CategoryName": "Golf Gloves",
+      "salesBeforeDiscounts": 116695.39000000006,
+      "netSales": 104787.40000000043,
+      "profit": 12975.49,
+      "margin": 12.382681505600814
+    },
+    {
+      "DimProduct[CategoryName": "Golf Bags & Carts",
+      "salesBeforeDiscounts": 10369.38999999999,
+      "netSales": 9403.789999999997,
+      "profit": 1810.07,
+      "margin": 19.248303077801616
+    },
+    {
+      "DimProduct[CategoryName": "Golf Shoes",
+      "salesBeforeDiscounts": 107998.0,
+      "netSales": 96506.47000000002,
+      "profit": 12406.07,
+      "margin": 12.855169192283167
+    },
+    {
+      "DimProduct[CategoryName": "Golf Apparel",
+      "salesBeforeDiscounts": 34969.750000000015,
+      "netSales": 31447.439999999973,
+      "profit": 3496.31,
+      "margin": 11.117947915633206
+    },
+    {
+      "DimProduct[CategoryName": "Women'S Golf Clubs",
+      "salesBeforeDiscounts": 44545.97,
+      "netSales": 39984.39000000004,
+      "profit": 5028.64,
+      "margin": 12.576507982240056
+    },
+    {
+      "DimProduct[CategoryName": "Men'S Golf Clubs",
+      "salesBeforeDiscounts": 47035.80000000003,
+      "netSales": 42382.79000000007,
+      "profit": 5517.99,
+      "margin": 13.019411888646287
+    },
+    {
+      "DimProduct[CategoryName": "Toys",
+      "salesBeforeDiscounts": 6104.66,
+      "netSales": 5485.67999999999,
+      "profit": 900.71,
+      "margin": 16.419295328929167
+    },
+    {
+      "DimProduct[CategoryName": "Water Sports",
+      "salesBeforeDiscounts": 3113844.600000009,
+      "netSales": 2798044.100000766,
+      "profit": 325146.96,
+      "margin": 11.620508768961539
+    },
+    {
+      "DimProduct[CategoryName": "Indoor/Outdoor Games",
+      "salesBeforeDiscounts": 2888993.9400000004,
+      "netSales": 2596454.0400000885,
+      "profit": 318451.43,
+      "margin": 12.264859115318256
+    }
+  ],
+  "years": [
+    {
+      "DimDate[Year": 2015,
+      "salesBeforeDiscounts": 12340831.190000562,
+      "netSales": 11089543.430005979,
+      "orders": 20904
+    },
+    {
+      "DimDate[Year": 2016,
+      "salesBeforeDiscounts": 12303817.080000512,
+      "netSales": 11055996.640006013,
+      "orders": 20859
+    },
+    {
+      "DimDate[Year": 2017,
+      "salesBeforeDiscounts": 11808435.930000713,
+      "netSales": 10610909.920003096,
+      "orders": 21866
+    },
+    {
+      "DimDate[Year": 2018,
+      "salesBeforeDiscounts": 331650.1100000008,
+      "netSales": 297952.0499999999,
+      "orders": 2123
+    }
+  ],
+  "markets": [
+    {
+      "DimLocation[Market": "Pacific Asia",
+      "salesBeforeDiscounts": 8273743.580000193,
+      "netSales": 7434262.580000848,
+      "profit": 857753.44
+    },
+    {
+      "DimLocation[Market": "USCA",
+      "salesBeforeDiscounts": 5066528.610000212,
+      "netSales": 4553499.870000389,
+      "profit": 564313.78
+    },
+    {
+      "DimLocation[Market": "Africa",
+      "salesBeforeDiscounts": 2294452.8799999827,
+      "netSales": 2061679.3699998274,
+      "profit": 252071.18
+    },
+    {
+      "DimLocation[Market": "Europe",
+      "salesBeforeDiscounts": 10872396.600000462,
+      "netSales": 9769198.230002305,
+      "profit": 1169442.96
+    },
+    {
+      "DimLocation[Market": "LATAM",
+      "salesBeforeDiscounts": 10277612.640000487,
+      "netSales": 9235761.990002314,
+      "profit": 1123321.61
+    }
+  ],
+  "coverage": {
+    "firstOrderDate": "2015-01-01T00:00:00",
+    "lastOrderDate": "2018-01-31T00:00:00",
+    "lateCustomers": 16018,
+    "lateNetSales": 18082555.109999914
+  }
+}

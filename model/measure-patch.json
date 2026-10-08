@@ -1,0 +1,184 @@
+[
+  {
+    "name": "Net Sales",
+    "table": "FactOrderItem",
+    "expression": "SUM(FactOrderItem[OrderItemTotal])",
+    "format": "$#,0.00",
+    "description": "Sales after recorded line discounts."
+  },
+  {
+    "name": "Total Orders",
+    "table": "FactOrderItem",
+    "expression": "DISTINCTCOUNT(FactOrderItem[OrderId])",
+    "format": "#,0",
+    "description": "Distinct orders in the current filter context."
+  },
+  {
+    "name": "Avg Order Value",
+    "table": "FactOrderItem",
+    "expression": "DIVIDE([Net Sales], [Total Orders])",
+    "format": "$#,0.00",
+    "description": "Net sales per distinct order."
+  },
+  {
+    "name": "Profit Margin %",
+    "table": "FactOrderItem",
+    "expression": "DIVIDE([Total Profit], [Net Sales]) * 100",
+    "format": "0.00",
+    "description": "Recorded line profit as a percentage of net sales; not an audited accounting gross margin."
+  },
+  {
+    "name": "Cost of Discounts",
+    "table": "FactOrderItem",
+    "expression": "SUM(FactOrderItem[OrderItemDiscount])",
+    "format": "$#,0.00",
+    "description": "Sum of recorded line discount amounts; may differ slightly from rate-based arithmetic due to rounding."
+  },
+  {
+    "name": "Gross Profit",
+    "table": "FactOrderItem",
+    "expression": "[Net Sales]",
+    "format": "$#,0.00",
+    "description": "Legacy compatibility alias. Use Net Sales in report visuals; not gross profit."
+  },
+  {
+    "name": "Gross Margin %",
+    "table": "FactOrderItem",
+    "expression": "[Profit Margin %]",
+    "format": "0.00",
+    "description": "Legacy alias; use recorded profit margin."
+  },
+  {
+    "name": "Profit Leakage Index",
+    "table": "FactOrderItem",
+    "expression": "DIVIDE([Cost of Discounts], [Total Sales]) * 100",
+    "format": "0.00",
+    "description": "Discount share of sales before discounts, not causal profit leakage."
+  },
+  {
+    "name": "Unprofitable Orders Count",
+    "table": "FactOrderItem",
+    "expression": "COUNTROWS(FILTER(VALUES(FactOrderItem[OrderId]), CALCULATE([Total Profit]) < 0))",
+    "format": "#,0",
+    "description": "Distinct orders whose visible lines have negative aggregate recorded profit."
+  },
+  {
+    "name": "Unprofitable Orders %",
+    "table": "FactOrderItem",
+    "expression": "DIVIDE([Unprofitable Orders Count], [Total Orders]) * 100",
+    "format": "0.00",
+    "description": "Share of selected orders with negative aggregate recorded profit."
+  },
+  {
+    "name": "Avg Delivery Delta Days",
+    "table": "FactOrderItem",
+    "expression": "AVERAGEX(FILTER(FactOrderItem, FactOrderItem[DeliveryStatus] <> \"Shipping canceled\"), FactOrderItem[DaysForShippingReal] - FactOrderItem[DaysForShipScheduled])",
+    "format": "0.00",
+    "description": "Signed shipping-time difference to schedule; cancelled lines excluded."
+  },
+  {
+    "name": "Avg Delivery Delay (Days)",
+    "table": "FactOrderItem",
+    "expression": "AVERAGEX(FILTER(FactOrderItem, FactOrderItem[DeliveryStatus] = \"Late delivery\"), FactOrderItem[DaysForShippingReal] - FactOrderItem[DaysForShipScheduled])",
+    "format": "0.00",
+    "description": "Average extra days among late delivered lines."
+  },
+  {
+    "name": "On-Time Delivery Rate %",
+    "table": "FactOrderItem",
+    "expression": "DIVIDE(CALCULATE(COUNTROWS(FactOrderItem), FactOrderItem[DeliveryStatus] IN {\"Advance shipping\", \"Shipping on time\"}), CALCULATE(COUNTROWS(FactOrderItem), FactOrderItem[DeliveryStatus] <> \"Shipping canceled\")) * 100",
+    "format": "0.00",
+    "description": "Early plus on-time lines as a share of non-cancelled delivered lines."
+  },
+  {
+    "name": "Late Delivery Rate",
+    "table": "FactOrderItem",
+    "expression": "DIVIDE(CALCULATE(COUNTROWS(FactOrderItem), FactOrderItem[DeliveryStatus] = \"Late delivery\"), CALCULATE(COUNTROWS(FactOrderItem), FactOrderItem[DeliveryStatus] <> \"Shipping canceled\")) * 100",
+    "format": "0.00",
+    "description": "Late delivered lines / non-cancelled delivered lines."
+  },
+  {
+    "name": "Late Delivery Rate by Mode",
+    "table": "FactOrderItem",
+    "expression": "DIVIDE([Late Delivery Rate],100)",
+    "format": "0.00%",
+    "description": "Late delivered-line rate under shipping-mode filter."
+  },
+  {
+    "name": "Avg Days to Ship",
+    "table": "FactOrderItem",
+    "expression": "CALCULATE(AVERAGE(FactOrderItem[DaysForShippingReal]),FactOrderItem[DeliveryStatus] <> \"Shipping canceled\")",
+    "format": "0.00",
+    "description": "Average actual shipping days for non-cancelled lines."
+  },
+  {
+    "name": "Customer Lifetime Value",
+    "table": "DimCustomer",
+    "expression": "DIVIDE([Net Sales], [Customer Count])",
+    "format": "$#,0.00",
+    "description": "Historical net revenue/customer; legacy name hidden, no future-value estimate."
+  },
+  {
+    "name": "Avg Revenue Per Customer",
+    "table": "DimCustomer",
+    "expression": "DIVIDE([Net Sales], [Customer Count])",
+    "format": "$#,0.00",
+    "description": "Historical net revenue per customer under current filters."
+  },
+  {
+    "name": "Sales per Customer",
+    "table": "FactOrderItem",
+    "expression": "[Avg Revenue Per Customer]",
+    "format": "$#,0.00",
+    "description": "Historical net revenue per customer."
+  },
+  {
+    "name": "Active Products",
+    "table": "DimProduct",
+    "expression": "CALCULATE(DISTINCTCOUNT(FactOrderItem[ProductKey]), FactOrderItem[Sales] > 0)",
+    "format": "#,0",
+    "description": "Products with positive sales in the current fact context."
+  },
+  {
+    "name": "Product Margin %",
+    "table": "DimProduct",
+    "expression": "DIVIDE([Total Profit],[Net Sales]) * 100",
+    "format": "0.00",
+    "description": "Revenue-weighted recorded profit margin under product filters."
+  },
+  {
+    "name": "Top 20% Customer Sales %",
+    "table": "DimCustomer",
+    "expression": "VAR Customers = ADDCOLUMNS(VALUES(FactOrderItem[CustomerKey]), \"Revenue\", CALCULATE([Net Sales])) VAR N = ROUNDUP(COUNTROWS(Customers)*0.2,0) VAR TopCustomers = TOPN(N, Customers, [Revenue], DESC, FactOrderItem[CustomerKey], ASC) RETURN DIVIDE(SUMX(TopCustomers,[Revenue]),[Net Sales])*100",
+    "format": "0.00",
+    "description": "Top ceiling(20%) of customers in selected fact context ranked by net revenue; deterministic key tie-break."
+  },
+  {
+    "name": "New Customers (Smart)",
+    "table": "DimCustomer",
+    "expression": "VAR EndDate = MAX(FactOrderItem[OrderDate]) VAR StartDate = IF(ISFILTERED(DimDate),MIN(DimDate[FullDate]), EDATE(EndDate,-12)+1) RETURN CALCULATE(DISTINCTCOUNT(DimCustomer[CustomerKey]), KEEPFILTERS(FILTER(DimCustomer, DimCustomer[FirstOrderDate]>=StartDate && DimCustomer[FirstOrderDate]<=EndDate)))",
+    "format": "#,0",
+    "description": "First observed purchase within selected dates, or trailing 12 months; retains customer segment filters."
+  },
+  {
+    "name": "Sales Growth %",
+    "table": "DimDate",
+    "expression": "VAR Prior = [Sales LY] RETURN IF(NOT ISBLANK(Prior) && Prior<>0, DIVIDE([Total Sales]-Prior,Prior)*100)",
+    "format": "0.00",
+    "description": "Same-period year-on-year gross-sales comparison; missing prior periods remain blank."
+  },
+  {
+    "name": "Latest Full-Year Sales Growth %",
+    "table": "DimDate",
+    "expression": "VAR LastFact = CALCULATE(MAX(FactOrderItem[OrderDate]), REMOVEFILTERS(DimDate)) VAR Y = YEAR(LastFact)-IF(LastFact<DATE(YEAR(LastFact),12,31),1,0) VAR CurrentSales=CALCULATE([Total Sales],REMOVEFILTERS(DimDate),DimDate[Year]=Y) VAR PriorSales=CALCULATE([Total Sales],REMOVEFILTERS(DimDate),DimDate[Year]=Y-1) RETURN DIVIDE(CurrentSales-PriorSales,PriorSales)*100",
+    "format": "0.00",
+    "description": "Latest complete calendar year versus previous year, preserving non-date selections."
+  },
+  {
+    "name": "Sales 3M Moving Avg",
+    "table": "DimDate",
+    "expression": "VAR Anchor = MAX(FactOrderItem[OrderDate]) VAR FirstMonth = EOMONTH(Anchor,-3)+1 VAR FirstData = CALCULATE(MIN(FactOrderItem[OrderDate]),REMOVEFILTERS(DimDate)) RETURN IF(FirstMonth>=FirstData, AVERAGEX(GENERATESERIES(0,2), VAR Offset=[Value] VAR EndDate=EOMONTH(Anchor,-Offset) VAR StartDate=EOMONTH(Anchor,-Offset-1)+1 RETURN CALCULATE([Total Sales], REMOVEFILTERS(DimDate), DATESBETWEEN(DimDate[FullDate],StartDate,EndDate))))",
+    "format": "$#,0.00",
+    "description": "Average of three calendar-month gross-sales totals, retaining market/customer/product filters. Early incomplete windows are blank."
+  }
+]
