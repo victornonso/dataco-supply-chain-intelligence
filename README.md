@@ -13,7 +13,7 @@ logistics, profitability and management priorities. Market, year and customer
 segment filters support investigation across the analytical pages.
 
 Screenshots are exported from the report, not interface mockups. The portfolio
-case study is https://victor-okeke-data-portfolio.victornonso44.chatgpt.site/projects/dataco-supply-chain-intelligence/
+case study is https://victorokeke.co.uk/projects/dataco-supply-chain-intelligence/
 
 ## Data and model
 
