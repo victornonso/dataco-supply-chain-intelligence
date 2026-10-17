@@ -12,8 +12,8 @@ Seven report views cover executive performance, sales, customers, products,
 logistics, profitability and management priorities. Market, year and customer
 segment filters support investigation across the analytical pages.
 
-Screenshots are exported from the report, not interface mockups. The portfolio
-case study is https://victorokeke.co.uk/projects/dataco-supply-chain-intelligence/
+Report exports and the analytical narrative are available in the
+[portfolio case study](https://victorokeke.co.uk/projects/dataco-supply-chain-intelligence/).
 
 ## Data and model
 
@@ -23,6 +23,17 @@ FactOrderItem connects to seven dimensions through active single-direction
 many-to-one relationships. `model/` contains extracted schema, relationships
 and audited measure definitions. `docs/` contains the semantic diagram and
 KPI dictionary. `evidence/metrics.json` records engine-verified aggregates.
+
+## Engineering decisions
+
+| Decision | Analytical purpose |
+|---|---|
+| Model order lines as the fact grain | Preserve product, discount and delivery detail without confusing line counts with distinct orders |
+| Use seven dimensions and single-direction relationships | Keep filter propagation explicit across report pages |
+| Centralise measures in DAX | Give each page the same definitions for sales, profit, margin and delivery performance |
+| Separate net sales from sales before discounts | Distinguish realised revenue from discount exposure |
+| Define eligible populations for each KPI | Exclude cancelled lines from late-delivery rates and identify partial reporting periods |
+| Retain schema, measures and computed evidence | Make the report's calculations inspectable alongside the PBIX |
 
 ## Findings and definitions
 
@@ -56,5 +67,7 @@ Report, DAX definitions and analytical presentation are Victor Okeke's work.
 
 Historical descriptive analysis. No causal discount effect, future customer
 value, independent cost-ledger reconstruction or currency conversion is claimed.
-No proprietary ipNX material, academic administrative files, packed Python
-virtual environments or raw audit-cache dumps are included.
+
+The next analytical stage is sensitivity testing across markets and customer
+segments, with consistent period coverage and explicitly defined discount and
+delivery cohorts.
